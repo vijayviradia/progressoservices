@@ -77,7 +77,22 @@ class progressoservices($srvsmspass,
     $enable = 'manual'
   }
 
-  service{'':
+  service{'ProgressoFormulaCalculation':
+    ensure => $running,
+    enable => $enable
+  }
+
+  service{'Progresso Reports Sync Service':
+    ensure => $running,
+    enable => $enable
+  }
+
+   service{'ProgressoSMSService':
+    ensure => $running,
+    enable => $enable
+  }
+
+     service{'LearnerAimsImportService':
     ensure => $running,
     enable => $enable
   }
