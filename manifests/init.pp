@@ -71,7 +71,7 @@ class progressoservices($srvsmspass,
   }
 
   # set service status
-  if $running = true {
+  if $running == true {
     $enable = true
   } else {
     $enable = 'manual'
