@@ -1,6 +1,6 @@
 # $moduledir/progressoservices/manifests/init.pp
 
-class progressoserverices($srvsmspass,
+class progressoservices($srvsmspass,
                           $srvrsspass,
                           $srvlaimspass,
                           $srvformulacalcpass) {
