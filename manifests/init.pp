@@ -31,27 +31,27 @@ class progressoserverices($srvsmspass,
   }
 
   # Update config files
-  file{'config-LearnerAims'
+  file{'config-LearnerAims':
     path    => 'C:\Program Files (x86)\Hewlett-Packard Company\LearnerAimsSetup\LearnerAimsImportService.exe.config',
     ensure  => present,
     content => template('progressoservices/LearnerAimsImportService.erb')
   }
-  file{'config-FormulaCalc'
+  file{'config-FormulaCalc':
     path    => 'C:\Program Files (x86)\Assessment Formula Calculation\ProgressoFormulaCalculationSetup\ProgressoFormulaCalculation.exe.config',
     ensure  => present,
     content => template('progressoservices/ProgressoFormulaCalculation.erb')
   }
-  file{'config-FormulaCalcFTJ'
+  file{'config-FormulaCalcFTJ':
     path    => 'C:\Program Files\Progresso\ProgressoFormulaCalculationFirstTime\ProgressoFormulaCalculationFirstTime.exe.config',
     ensure  => present,
     content => template('progressoservices/ProgressoFormulaCalculationFirstTime.erb')
   }
-  file{'config-SMS'
+  file{'config-SMS':
     path    => 'C:\Program Files (x86)\iGate\ProgressoSMSService Setup\ProgressoSMSService.exe.config',
     ensure  => present,
     content => template('progressoservices/ProgressoSMSService.erb')
   }
-  file{'config-RSS'
+  file{'config-RSS':
     path    => 'C:\Program Files\IGATE\Progresso Report Sync Service\ReportServerSync.exe.config',
     ensure  => present,
     content => template('progressoservices/ReportServerSync.erb')
