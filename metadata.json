@@ -1,0 +1,16 @@
+{
+  "name": "advlearning-progressoservices",
+  "version": "0.0.1",
+  "author": "advlearning",
+  "summary": "Progresso Services Config",
+  "license": "Apache License, Version 2.0",
+  "source": "",
+  "project_page": "",
+  "issues_url": "",
+  "types": [
+
+  ],
+  "description": "Set the config for services and check running status",
+  "dependencies": [
+  ]
+}

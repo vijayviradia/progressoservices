@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<configuration>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.1"/>
+  </startup>
+  <connectionStrings>
+    <add name="ConnStrReports" connectionString="Data Source=<%= dbrs %>;Initial Catalog=ReportServer;User ID=<%= @dbuserprefix %>RSS;Password=<%= @srvrsspass %>" providerName="System.Data.SqlClient"/>
+    <add name="ConnStrMis" connectionString="Initial Catalog=ProgressoMis;Data Source=<%= dbmis %>;user id=<%= @dbuserprefix %>RSS;password=<%= srvrsspass %>;" providerName="System.Data.SqlClient"/>
+    <add name="ErrisPLConnectionString" connectionString="Initial Catalog=ProgressoMIS;Data Source=<%= dbmis %>;user id=<%= @dbuserprefix %>RSS;password=<%= srvrsspass %>;" providerName="System.Data.SqlClient"/>
+    <add name="Entities" connectionString="metadata=res://ErrisModel/Model.csdl|res://ErrisModel/Model.ssdl|res://ErrisModel/Model.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=<%= @dbmis %>;user id=<%= @dbuserprefix %>RSS;password=<%= @srvrsspass %>;Initial Catalog=ProgressoMIS;MultipleActiveResultSets=True&quot;" providerName="System.Data.EntityClient"/>
+  </connectionStrings>
+  <appSettings>
+    <add key="ReportServerDomain" value="progresso.net"/>
+    <add key="TimeIntervalInMinutes" value="1"/>
+    <add key="ClientSettingsProvider.ServiceUri" value=""/>
+  </appSettings>
+  <system.web>
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri=""/>
+      </providers>
+    </membership>
+    <roleManager defaultProvider="ClientRoleProvider" enabled="true">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400"/>
+      </providers>
+    </roleManager>
+  </system.web>
+</configuration>

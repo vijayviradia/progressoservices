@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <section name="ErrisCacheConfiguration" type="Erris.Caching.ErrisCacheConfigurationSection, Erris.Caching" allowDefinition="MachineToApplication" restartOnExternalChanges="true"/>
+  </configSections>
+  <ErrisCacheConfiguration>
+    <cacheManagers>
+      <add name="ErrisMemoryCacheManager" type="Erris.Caching.Providers.ErrisMemoryCacheManager, Erris.Caching"/>
+    </cacheManagers>
+  </ErrisCacheConfiguration>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.1"/>
+  </startup>
+  <connectionStrings>
+    <add name="ErrisPLConnectionString" connectionString="Data Source=<%= @dbmis %>;user id=<%= @dbuserprefix %>FormulaCalc;password=<%= @srvformulacalcpass %>;Initial Catalog=ProgressoMIS;" providerName="System.Data.SqlClient"/>
+    <add name="Entities" connectionString="metadata=res://ErrisModel/Model.csdl|res://ErrisModel/Model.ssdl|res://ErrisModel/Model.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=<%= dbmis %>;user id=<%= @dbuserprefix %>FormulaCalc;password=<%= @srvformulacalcpass %>;Initial Catalog=ProgressoMIS;MultipleActiveResultSets=True&quot;" providerName="System.Data.EntityClient"/>
+  </connectionStrings>
+  <appSettings>
+    <add key="IsLogNeeded" value="true"/>
+    <add key="LogPath" value="C:\Program Files\Progresso\MyLog"/>
+  </appSettings>
+</configuration>
