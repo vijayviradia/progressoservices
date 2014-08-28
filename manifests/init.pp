@@ -1,9 +1,10 @@
 # $moduledir/progressoservices/manifests/init.pp
 
 class progressoservices($srvsmspass,
-                          $srvrsspass,
-                          $srvlaimspass,
-                          $srvformulacalcpass) {
+                        $srvrsspass,
+                        $srvlaimspass,
+                        $srvformulacalcpass,
+                        $running = true) {
   # resource schecks
   ensure_resource(file, 'D:\SQLScripts', {ensure => directory})
   ensure_resource(file, 'D:\SQLScripts\Accounts', {ensure => directory})
@@ -67,5 +68,17 @@ class progressoservices($srvsmspass,
     path   => 'D:\SQLScripts\Accounts\resetServicePasswords.sql',
     ensure => present,
     content => template('progressoservices/sqlscripts/resetServicePasswords.erb')
+  }
+
+  # set service status
+  if $running = true {
+    $enable = true
+  } else {
+    $enable = 'manual'
+  }
+
+  service{'':
+    ensure => $running,
+    enable => $enable
   }
 }
