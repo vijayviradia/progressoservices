@@ -4,10 +4,11 @@ class progressoservices($srvsmspass,
                         $srvrsspass,
                         $srvlaimspass,
                         $srvformulacalcpass,
-                        $running = true) {
+                        $running = true,
+                        $scriptpath = 'D:\SQLScripts' ) {
   # resource schecks
-  ensure_resource(file, 'D:\SQLScripts', {ensure => directory})
-  ensure_resource(file, 'D:\SQLScripts\Accounts', {ensure => directory})
+  ensure_resource(file, $scriptpath, {ensure => directory})
+  ensure_resource(file, "$scriptpath\Accounts", {ensure => directory})
 
   # Substitution parameters
   $dbuserprefix = upcase($hostname) ? {
